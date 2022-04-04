@@ -18,14 +18,14 @@ roles {
   integer organization_id FK
   string name
   string note
-  integer grant_kind "all(全体), part(一部)"
+  integer grant_kind
 }
 
 offices {
   integer id PK
   integer organization_id FK
   string name
-  integer member_id FK "事業所責任者id"
+  integer member_id FK
 }
 
 role_offices {
@@ -46,9 +46,10 @@ members ||--o{ offices: ""
 
 ## 制限事項
 - ""の外では英語以外は使用できない
+- 属性にコメントを付けるとGithub上では表示に失敗する
+- Github上では表示が崩れる
 - 変更中をどう表現するか（gitで履歴管理されるのでそもそもする必要あるか）
 - コンフリクトがどれほど発生するかは懸念点
-
 
 ## ドキュメント
 [ドキュメント](https://mermaid-js.github.io/mermaid/#/)
