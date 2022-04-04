@@ -1,8 +1,8 @@
 ```mermaid
 erDiagram
 users {
-  id pk
+  id PK
   name string
-  email メールアドレス
+  email string
 }
 ```
