@@ -2,36 +2,36 @@
 erDiagram
 
 organizations {
-  id PrimaryKey
-  name String
+  integer id PK
+  string name
 }
 
 members {
-  id PrimaryKey
-  organization_id ForeignKey
-  name String
-  email String
+  integer id PK
+  integer organization_id FK
+  string name
+  string email
 }
 
 roles {
-  id PrimaryKey
-  organization_id ForeignKey
-  name String
-  note String
-  grant_kind Enum
+  integer id PK
+  integer organization_id FK
+  string name
+  string note
+  integer grant_kind "all(全体), part(一部)"
 }
 
 offices {
-  id PrimaryKey
-  organization_id ForeignKey
-  name String
-  member_id ForeignKey
+  integer id PK
+  integer organization_id FK
+  string name
+  integer member_id FK "事業所責任者id"
 }
 
 role_offices {
-  id PrimaryKey
-  role_id ForeignKey
-  office_id ForeignKey
+  integer id PK
+  integer role_id FK
+  integer office_id FK
 }
 
 organizations ||--o{ members: ""
@@ -40,13 +40,15 @@ organizations ||--o{ offices: ""
 roles ||--o{ members: ""
 roles ||--o{ role_offices: ""
 offices ||--o{ role_offices: ""
-members ||--o{ offices: "事業所責任者"
+members ||--o{ offices: ""
 
 ```
 
 ## 制限事項
-- 日本語が使えない
-- ()が使えない
-- ２列構成を崩してはいけない
+- ""の外では英語以外は使用できない
 - 変更中をどう表現するか（gitで履歴管理されるのでそもそもする必要あるか）
+- コンフリクトがどれほど発生するかは懸念点
 
+
+## ドキュメント
+[ドキュメント](https://mermaid-js.github.io/mermaid/#/)
