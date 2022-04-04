@@ -3,6 +3,6 @@ erDiagram
 users {
   id PrimaryKey
   name string
-  email string
+  email メールアドレス
 }
 ```
