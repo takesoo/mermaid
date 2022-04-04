@@ -8,7 +8,7 @@ organizations {
 
 members {
   integer id PK
-  integer organization_id FK "can i put english"
+  integer organization_id FK ""
   string name
   string email
 }
