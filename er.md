@@ -18,14 +18,14 @@ roles {
   integer organization_id FK
   string name
   string note
-  integer grant_kind "all(全体), part(一部)"
+  integer grant_kind
 }
 
 offices {
   integer id PK
   integer organization_id FK
   string name
-  integer member_id FK "事業所責任者id"
+  integer member_id FK
 }
 
 role_offices {
