@@ -6,6 +6,7 @@ organizations {
   string name
 }
 
+%% コメントはこうして残せます
 members {
   integer id PK
   integer organization_id FK
